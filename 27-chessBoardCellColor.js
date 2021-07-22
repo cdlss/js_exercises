@@ -36,8 +36,8 @@ function chessBoardCellColor(cell1, cell2){
         "H": 8,
     };
 
-    const total1 = (board[cell1[0]] + parseInt(board[cell1[1]])) % 2;
-    const total2 = (board[cell2[0]] + parseInt(board[cell2[1]])) % 2;
+    const total1 = (board[cell1[0]] + parseInt(cell1[1])) % 2;
+    const total2 = (board[cell2[0]] + parseInt(cell2[1])) % 2;
 
     return total1 === total2;
 }
