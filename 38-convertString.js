@@ -33,7 +33,6 @@
 function convertString(s, t) {
   let word = '';
   let tIndex = 0;
-  const sChars = s.split(' ');
 
   for (let i = 0; i < s.length; i++) {
     if (s[i] === t[tIndex]) {
