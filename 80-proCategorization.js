@@ -59,33 +59,33 @@ and Pros in each subarray should be sorted.
 */
 
 function proCategorization(pros, preferences) {
-    const propsPreferences = {};
-    const proPrefs = [];
+    const prosPreferences = {};
+    let proPrefs = [];
 
     for (let i = 0; i < pros.length; i++) {
         for (let j = 0; j < preferences[i].length; j++) {
             if (prosPreferences.hasOwnProperty(preferences[i][j])) {
-                prosPreferences[preferences[i][j].push(pros[i]);
+                prosPreferences[preferences[i][j]].push(pros[i]);
             } else {
-                prosPreferences[preferences[i][j] = [pros[i]];
+                prosPreferences[preferences[i][j]] = [pros[i]];
             }
             
         }
     }
 
-    for (const prop of prosPreferences) {
-        proPrefs.push([[prop], [...proPreferences[prop]]]);
+    for (const prop in prosPreferences) {
+        proPrefs.push([[prop], [...prosPreferences[prop]]]);
     }
 
     proPrefs = proPrefs.sort((pref1, pref2) => {
-        const pre1Lower = pref1[0][0].toLowerCase();
-        const pre2Lower = pref2[0][0].toLowerCase();
+        const pref1Lower = pref1[0][0].toLowerCase();
+        const pref2Lower = pref2[0][0].toLowerCase();
 
-        if (pre1Lower > pre2Lower) {
+        if (pref1Lower > pref2Lower) {
             return 1;
         }
 
-        if (pref1Lower < pre2Lower) {
+        if (pref1Lower < pref2Lower) {
             return -1;
         }
 
