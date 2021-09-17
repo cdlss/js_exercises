@@ -1,0 +1,40 @@
+/** 
+  Proper nouns always begin with a capital letter, followed by small letters.
+  Correct a given proper noun so that it fits this statement.
+
+
+**Example**
+-   For noun = "pARiS", the output should be
+properNounCorrection(noun) = "Paris";
+
+-   For noun = "John", the output should be
+properNounCorrection(noun) = "John".
+
+**Hints**
+-   toUpperCase()
+-   toLowerCase()
+-   concat()
+-   slice()
+
+**Input/Output**
+- **[execution time limit] 5 seconds (ts)**
+- **[input] string noun**
+
+A string representing a proper noun with a mix of capital and small Latin letters.
+
+*Guaranteed constraints:*
+1 ≤ noun.length ≤ 10.
+
+- **[output] string**
+Corrected (if needed) noun.
+ 
+*/
+
+function properNounCorrection(noun) {
+   const firstChar = noun[0].toUpperCase();
+   const restOfWord = noun.slice(1, noun.length).toUpperCase;
+   return firstChar.concat(restOfWord);
+}
+
+console.log(properNounCorrection('pARiS'));
+console.log(properNounCorrection('John'));
